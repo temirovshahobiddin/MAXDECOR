@@ -1,0 +1,129 @@
+.about__banner {
+    padding: 140px 0;
+
+    background-color: #F3F3F3;
+}
+
+.about__banner-pos {
+    display: flex;
+    justify-content: space-around;
+}
+
+.banner__power,
+.banner__studio,
+.banner__regions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #192965;
+    font-family: $medium;
+    @include adaptiv-font(46, 30);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.62px;
+    text-transform: uppercase;
+
+    span {
+        color: #1E1E1E;
+        text-align: center;
+        font-family: $medium;
+        @include adaptiv-font(20, 17);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: 0.25px;
+        text-transform: none;
+
+        @media (max-width: 762px) {
+            letter-spacing: -0.5px;
+            font-weight: 550;
+        }
+    }
+
+    p {
+        color: #1E1E1E;
+        text-align: center;
+        font-family: $regular;
+        @include adaptiv-font(20, 17);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.25px;
+        text-transform: none;
+    }
+}
+
+.banner__studio {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 67px;
+        height: 67px;
+    }
+}
+
+.banner__regions {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.title__page {
+    margin: 40px auto;
+
+    color: #1E1E1E;
+    font-family: $regular;
+    @include adaptiv-font(28,18);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+}
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Медиазапросы
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@media (max-width:1500px) {
+    .about__banner-pos {
+        padding: 0 20px;
+    }
+
+    .title__page {
+        padding: 0 20px;
+    }
+
+}
+
+@media (max-width:1000px) {
+
+    .about__banner-pos {
+        flex-direction: column;
+        row-gap: 75px;
+    }
+
+    .about__banner {
+        padding: 70px 0;
+    }
+}
+
+@media (max-width:762px) {
+    .about__banner {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width:500px) {
+    .title__page {
+        display: flex;
+        justify-content: center;
+    }
+}

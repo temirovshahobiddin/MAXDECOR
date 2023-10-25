@@ -1,0 +1,493 @@
+.table-card__container {
+    display: flex;
+    flex-wrap: wrap;
+
+    column-gap: 60px;
+    row-gap: 40px;
+
+    transition: max-height 0.9s ease-out 0.2s;
+    max-height: 1135px;
+    overflow: hidden;
+
+    @media (max-width: 762px) {
+
+        padding: 0 20px;
+
+
+    }
+
+}
+
+
+
+// Стили карточки
+.card__container {
+    display: flex;
+    flex-direction: column;
+
+    width: 440px;
+    height: 550px;
+}
+
+
+
+
+
+@keyframes wave {
+
+    50%,
+    75% {
+        transform: scale(2.5);
+    }
+
+    80%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+// Стиль картинки и текста на ней
+.card__figure {
+    position: relative;
+
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+    transition: all 0.5s linear 0s;
+}
+
+.card__figure:hover .card__img {
+    transform: scale(1.05);
+}
+
+.card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: all 0.5s linear 0s;
+}
+
+.card__img_slace {
+    transform: scale(1.1);
+    transition: all 0.2s linear 0.1s;
+}
+
+.card__figure-elem {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.card__figure-title {
+    position: absolute;
+    top: 25px;
+    left: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #192965;
+    width: 67px;
+    height: 35px;
+
+
+
+    color: #FFF;
+    font-family: "AvenirNextCyr-Light";
+    @include adaptiv-font(17, 11);
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+
+
+}
+
+.card__figure-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 69px;
+
+    background: #F3F3F3;
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(15, 10);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    transition: all 0.2s linear 0s;
+
+    cursor: pointer;
+
+    visibility: hidden;
+    opacity: 0;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        background: #192965;
+        color: #FFF;
+
+        font-weight: 400;
+    }
+}
+
+.active__card-figure-btn {
+    transition: all 0.2s linear 0.1s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.heart-container {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: no-drop;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+
+    .like-btn {
+        color: #Fff;
+        font-size: 30px;
+        transition: all .4s;
+
+        &.liked {
+            color: #ED4546;
+        }
+    }
+
+    cursor: pointer;
+}
+
+
+
+
+
+// Тело карточка
+.card__body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__body-subtitle {
+    margin-top: 13px;
+
+    color: #707070;
+    font-family: "AvenirNextCyr-Light";
+    @include adaptiv-font(19, 12);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px
+}
+
+.card__body-title {
+    margin-bottom: 13px;
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(26, 15);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.card__body-title_type {
+    margin-bottom: 13px;
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(20, 15);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.card__body-first-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__body-second-column {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.card__body-price {
+    margin-top: 13px;
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(22, 15);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px;
+}
+
+// Стилизация пагинации
+
+
+.table-card__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+
+    width: 100%;
+}
+
+.pagination_prew_btn,
+.pagination_next_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+    border: 1px solid #707070;
+
+    transition: all 0.1s linear 0s;
+
+    cursor: pointer;
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+
+    &:hover {
+        transition: all 0.1s linear 0s;
+        background-color: #70707036;
+        border-color: #70707036;
+    }
+}
+
+.pagination_prew_btn {
+    img {
+        transform: rotate(180deg);
+    }
+}
+
+
+.pagination_numb {
+    display: flex;
+    column-gap: 20px;
+
+    p {
+        padding: 10px 20px;
+
+        color: #707070;
+        text-align: center;
+        font-family: "AvenirNextCyr-Bold";
+        @include adaptiv-font(18, 15);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        cursor: pointer;
+    }
+}
+
+// Кнопка раскрытия таблицы
+
+.card-table__open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    margin-top: 100px;
+
+    width: 360px;
+    height: 53px;
+
+    border-radius: 15px;
+
+    background: #192965;
+    color: #fff;
+    font-family: $medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    transition: all 0.2s linear 0s;
+
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        color: #fff;
+        background-color: #F3F3F3;
+        background: #3357dad4;
+        border-color: #F3F3F3;
+    }
+}
+
+.delete_btn {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s linear 0s;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Медиазапросы
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@media (max-width: 1500px) {
+    .table-card__container {
+        justify-content: space-evenly;
+    }
+
+    .card__container {
+        margin: 0 12px;
+    }
+
+}
+
+@media (max-width: 927px) {
+    .table-card__container {
+        max-height: 2475px;
+    }
+
+    .card__container {
+        height: 555px;
+    }
+
+    .card__figure-btn {
+        height: 80px;
+    }
+
+
+    .card__body-subtitle {
+        margin-top: 0px;
+    }
+
+    .card__body-title {
+        margin-bottom: 0px;
+    }
+
+    .table-card__pagination {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 762px) {
+
+    .pagination_prew_btn,
+    .pagination_next_btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .pagination_numb {
+        p {
+            padding: 7px 14px;
+        }
+    }
+}
+
+
+
+@media (max-width: 500px) {
+    .table-card__container {
+        max-height: 1745px;
+        row-gap: 15px;
+    }
+
+    .card__container {
+        height: 425px;
+
+        margin: 0;
+    }
+
+
+    .card__figure {
+        height: 330px;
+    }
+
+    .card__figure-btn {
+        height: 50px;
+    }
+
+
+    .card__body-subtitle {
+        margin-top: 8px;
+        line-height: 24px;
+    }
+
+    .card__body-title {
+        margin-bottom: 8px;
+        line-height: 24px;
+    }
+
+    .card__body-price {
+        line-height: 24px;
+    }
+
+    .pagination_numb {
+        p {
+            padding: 5px 7px;
+        }
+    }
+
+    .card-table__open {
+        width: 280px;
+        height: 43px;
+
+        margin-top: 50px;
+    }
+}
+
+
+
+
+
+
+.filtered-products {
+    opacity: 1;
+    transition: all .4s;
+}
+
+
+
+
+// Медиазапросы для сенсорных экранов 
+
+@media (hover: none) and (pointer: coarse) {
+    .active__card-figure-btn__phone {
+        transition: all 0.2s linear 0.1s;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@media (hover: none) and (pointer: fine) {
+    .active__card-figure-btn__phone {
+        transition: all 0.2s linear 0.1s;
+        visibility: visible;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,1049 @@
+.nav__container {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 12;
+
+    background-color: #fbfbfb;
+}
+
+.nav__container-pos {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__select-click {
+    &::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 50px;
+        background: #192965;
+        border-radius: inherit;
+        animation: wave 1.5s ease-out;
+        z-index: -1;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes wave {
+
+    50%,
+    75% {
+
+
+        transform: scale(2.5);
+    }
+
+    80%,
+    100% {
+        z-index: 1;
+        opacity: 0;
+    }
+}
+
+// Первая линия nav
+
+.nav__first-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 72px;
+
+    border-bottom: solid 1px #dfdfe0;
+}
+
+.nav__logo-container {
+    display: block;
+
+    width: 125px;
+    height: 50px;
+}
+
+.nav__logo {
+    width: 125px;
+    height: 50px;
+}
+
+.nav__search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    max-width: 644px;
+    width: 100%;
+    height: 44px;
+
+    border-radius: 30px;
+    background-color: #f0f1f2;
+}
+
+.nav__search-label {
+    margin: 2px 0 0 5px;
+
+    cursor: pointer;
+
+    img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.nav__search-input {
+    max-width: 450px;
+    width: 100%;
+    height: 20px;
+
+    border: none;
+    outline: none;
+
+    background-color: #f0f1f2;
+}
+
+.nav__search-btn {
+    width: 88px;
+    height: 32px;
+
+    border-radius: 24px;
+    border: none;
+
+    background: #192965;
+
+    color: #fff;
+    text-align: center;
+    @include adaptiv-font(12, 12);
+    font-family: $regular;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: lowercase;
+
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        background: #0e1636;
+    }
+
+    @media (max-width: 762px) {
+        width: 100px;
+    }
+}
+
+.nav__login-auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 234px;
+    width: 100%;
+    height: 48px;
+
+    border-radius: 30px;
+    background: #e3ebfd;
+    color: #192965;
+    text-align: center;
+    @include adaptiv-font(12, 7);
+    font-family: $bold;
+    font-style: normal;
+    font-weight: 700;
+
+    @media (max-width: 762px) {
+        letter-spacing: -0.5px;
+        font-weight: 550;
+    }
+
+
+    font-size: 12px;
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        background: #ccdbff;
+    }
+
+
+}
+
+// Вторая линия nav
+.nav__second-line {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 72px;
+}
+
+// Навигация
+.nav__nav {
+    display: flex;
+    column-gap: 40px;
+
+    a {
+        color: #1e1e1e;
+        @include adaptiv-font(14, 10);
+        font-family: $medium;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        transition: all .4s;
+        padding: 27px 0;
+
+        &:hover {
+            color: #192965;
+            @include adaptiv-font(14, 10);
+            transition: all .4s;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        @media (max-width: 762px) {
+            letter-spacing: -0.5px;
+            font-weight: 550;
+        }
+    }
+
+    .nav__nav-collections {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        width: 130px;
+
+        color: #1e1e1e;
+        @include adaptiv-font(14, 10);
+        font-family: $regular;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        cursor: pointer;
+
+        .nav__nav-arrow {
+            position: absolute;
+            top: 28px;
+            right: 13px;
+            transition: all 0.2s ease 0s;
+        }
+
+        &:hover {
+            color: #192965;
+            @include adaptiv-font(14, 10);
+            font-family: $bold;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+    }
+}
+
+.active_a {
+    color: #192965;
+    @include adaptiv-font(14, 10);
+    font-family: $bold;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+// Выпадающее меню навигации nav
+
+.nav__drop-menu-container {
+    position: absolute;
+    top: 71px;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 218px;
+    height: 283px;
+
+    overflow-y: auto;
+
+    background-color: #fbfbfb;
+
+    border-radius: 0 0 8px 8px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease 0s;
+
+    a {
+        padding: 13px 14px;
+        margin: 8px 11px;
+
+        color: #1e1e1e;
+        @include adaptiv-font(12, 9);
+        font-family: $medium;
+        font-style: normal;
+        font-weight: 550;
+        line-height: 20px;
+
+        border-radius: 8px;
+
+        transition: all 0.1s linear 0s;
+
+        &:hover {
+            background: #e3ebfd;
+            transition: all 0.1s linear 0s;
+        }
+
+        @media (max-width: 762px) {
+            letter-spacing: -0.5px;
+            font-weight: 550;
+        }
+    }
+}
+
+// Стиль при добавлении которого будет появляться меню
+.active {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s ease 0s;
+
+    z-index: 11;
+}
+
+.active_arrow {
+    transform: rotate(-180deg) translateY(-4px);
+    transition: all 0.2s ease 0s;
+}
+
+// Стилизация полосы прокрутки выпадающего меню в nav
+
+.nav__drop-menu-container {
+    scrollbar-width: thin;
+    scrollbar-color: #a1a1a1 #fff;
+
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #fff;
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #a1a1a1;
+        border-radius: 20px;
+        border: 3px solid #fff;
+    }
+}
+
+// Правый контейнер второй линии
+.nav__second-line__right-container {
+    display: flex;
+    column-gap: 70px;
+    position: relative;
+}
+
+.nav__second-line__icon-container {
+    display: flex;
+    column-gap: 8px;
+}
+
+.nav__select {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    border-radius: 30px;
+    background: #e3ebfd;
+
+    transition: all 0.2s linear 0s;
+
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        background: #cad9fc;
+    }
+
+    &-any {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: -4px;
+        right: -5px;
+        background: #EC4646;
+        border-radius: 50%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        z-index: 1;
+    }
+}
+
+.nav__basket {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    border-radius: 30px;
+    background: #192965;
+
+    transition: all 0.2s linear 0s;
+
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        background: #0e1636;
+    }
+
+    &-any {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: -4px;
+        right: -5px;
+        background: #EC4646;
+        border-radius: 50%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        z-index: 1;
+    }
+}
+
+.nav__lang-container {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+
+    width: 80px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out 0s;
+
+    &:hover {
+        transition: all 0.2s ease-in-out 0s;
+        background-color: #e3ebfd;
+    }
+
+    p {
+        margin-left: 17px;
+
+        color: #1e1e1e;
+        @include adaptiv-font(24, 15);
+        font-family: $medium;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+
+    img {
+        width: 16px;
+        height: 16px;
+
+        transition: all 0.2s ease-in-out 0s;
+    }
+}
+
+.nav__lang-container_select {
+    position: absolute;
+    top: 47px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 -3px 0;
+    width: 80px;
+    background-color: #e3ebfd;
+
+
+    border-radius: 0 0 14px 14px;
+
+    background-color: #e3ebfd;
+
+
+    transition: all 0.2s linear 0s;
+    visibility: hidden;
+    opacity: 0;
+
+    @media (max-width: 762px) {
+        width: 158px;
+        flex-direction: row;
+        left: 79px;
+        top: 0;
+
+        border-radius: 0 14px 14px 0;
+    }
+
+    p {
+        display: inline-block;
+        padding: 5px 10px;
+
+        margin-left: 6px;
+        margin-right: 6px;
+
+        color: #1e1e1e;
+        @include adaptiv-font(24, 15);
+        font-family: $medium;
+        font-style: normal;
+        font-weight: 450;
+        line-height: normal;
+        text-transform: uppercase;
+
+        border-radius: 10px;
+
+        cursor: pointer;
+
+        transition: all 0.2s ease-in-out 0s;
+
+        &:hover {
+            transition: all 0.2s ease-in-out 0s;
+            background-color: #c0d1fa;
+        }
+    }
+}
+
+// классы анимации
+.deg180 {
+    transition: all 0.2s ease-in-out 0s;
+
+    @media (max-width: 762px) {
+        transform: rotate(-90deg) !important;
+    }
+
+}
+
+.nav__lang-container_select-active {
+    transition: all 0.2s linear 0s;
+
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav__lang-container-active {
+    transition: all 0.2s ease-in-out 0s;
+    border-radius: 14px 14px 0 0;
+
+    background-color: #e3ebfd;
+
+    @media (max-width: 762px) {
+        border-radius: 14px 0 0 14px;
+    }
+}
+
+
+
+
+
+
+
+// Строка поиска для телефона (третья линия)
+
+
+.nav__third-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 63px;
+
+    display: none;
+}
+
+
+
+.third-line__search-container {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 44px;
+
+    border-radius: 30px;
+    background-color: #f0f1f2;
+}
+
+.third-line__search-label {
+    margin: 2px 10px 0 20px;
+
+    cursor: pointer;
+
+    img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.third-line__search-input {
+    width: 100%;
+    height: 20px;
+
+    margin-right: 10px;
+
+    border: none;
+    outline: none;
+
+    background-color: #f0f1f2;
+}
+
+.third-line__search-btn {
+    width: 88px;
+    height: 34px;
+
+    margin-right: 10px;
+
+    border-radius: 24px;
+    border: none;
+
+    background: #192965;
+
+    color: #fff;
+    text-align: center;
+    @include adaptiv-font(12, 10);
+    font-family: $regular;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: lowercase;
+
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        background: #0e1636;
+    }
+}
+
+
+
+// Кнопка меню для телефона
+
+.nav__btn-phone-menu {
+
+
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0s;
+
+    display: none;
+}
+
+
+.btn-phone-menu__top,
+.btn-phone-menu__mid,
+.btn-phone-menu__bot {
+    width: 35px;
+    height: 3px;
+    border-radius: 50px;
+    background-color: #192965;
+
+    transition: all 0.2s ease-in-out 0s;
+}
+
+
+// При клике на "nav__btn-phone-menu" дожны добавляться эти классы
+.nav__btn-phone-menu-active {
+    transform: translateY(-14px);
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.btn-phone-menu__top-active,
+.btn-phone-menu__bot-active,
+.btn-phone-menu__mid-active {
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.btn-phone-menu__top-active {
+    transform: rotate(45deg) translate(6px, 4px);
+}
+
+.btn-phone-menu__bot-active {
+    transform: rotate(-45deg) translate(7px, -5px);
+}
+
+.btn-phone-menu__mid-active {
+    transform: scale(0);
+}
+
+
+
+
+//Меню для телефона 
+
+.nav__menu-phone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    background: #F8F8F8;
+}
+
+.nav__menu-phone__prev {
+    position: absolute;
+    top: 45px;
+    left: 50px;
+    color: #000;
+    font-family: $medium;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    border-bottom: #000 2px solid;
+
+    @media (max-width: 762px) {
+        letter-spacing: -0.5px;
+        font-weight: 550;
+    }
+}
+
+.nav__menu-phone__item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px;
+    row-gap: 30px;
+
+    margin-top: 140px;
+}
+
+.nav__menu-phone__item-collections {
+    color: #192965;
+    font-family: $medium;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @media (max-width: 762px) {
+        letter-spacing: -0.5px;
+        font-weight: 550;
+    }
+}
+
+.nav__menu-phone__item {
+    color: #1E1E1E;
+    font-family: $medium;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @media (max-width: 762px) {
+        letter-spacing: -0.5px;
+        font-weight: 550;
+    }
+}
+
+.lang__mob-pos {
+    margin: 15px 0 110px 35px !important;
+}
+
+
+
+
+
+
+
+
+
+.nav__menu-phone__collections-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 100%;
+
+    overflow-y: auto;
+
+    margin-left: 50px;
+    margin-top: 160px;
+}
+
+.nav__menu-phone__collections-item {
+    color: #1E1E1E;
+    font-family: $regular;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px;
+}
+
+.display-none {
+    display: none;
+}
+
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Медиазапросы
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@media (max-width: 1500px) {
+    .nav__container-pos {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .nav__search-container {
+        margin: 0 10px;
+    }
+
+    .nav__search-label {
+        margin: 0 20px;
+    }
+
+    .nav__search-btn {
+        margin: 0 10px;
+    }
+
+    .nav__login-auth {
+        max-width: 210px;
+        /*  padding: 0 10px; */
+    }
+
+    .nav__nav {
+        column-gap: 0px;
+    }
+
+    .nav__nav-arrow {
+        top: 25px !important;
+        right: 30px !important;
+    }
+
+
+    .nav__second-line__right-container {
+        column-gap: 10px;
+    }
+}
+
+@media (max-width: 762px) {
+    .nav__container {
+        z-index: 15;
+    }
+
+    .nav-search__result {
+        top: 167px;
+    }
+
+    .nav__third-line {
+        display: flex;
+    }
+
+    .nav__search-container {
+        display: none;
+    }
+
+    .nav__nav {
+        display: none;
+    }
+
+    .nav__lang-container {
+        display: none;
+    }
+
+    .lang-collections__mob-pos {
+        display: flex;
+        margin: 20px 20px;
+        transition: none;
+
+
+        p {
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+    }
+
+    // .lang__mob-pos {
+    //     display: flex;
+    //     height: 50px;
+    //     margin: 15px 0 0 35px;
+    // }
+
+
+
+    .nav__second-line__icon-container {
+        column-gap: 23px;
+    }
+
+    .nav__first-line {
+        height: 52px;
+    }
+
+    .nav__second-line {
+        height: 72px;
+        align-items: center;
+
+    }
+
+    .nav__basket,
+    .nav__select {
+        width: 46px;
+        height: 46px;
+
+        img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .nav__logo-container {
+        width: 85px;
+        height: 36px;
+
+        img {
+            width: 85px;
+            height: 36px;
+        }
+    }
+
+    .nav__login-auth {
+        max-width: 200px;
+        height: 37px;
+        font-family: $medium;
+
+        @media (max-width: 762px) {
+            letter-spacing: -0.5px;
+            font-weight: 550;
+        }
+    }
+
+    .nav__btn-phone-menu {
+        display: flex;
+        z-index: 15;
+
+    }
+
+    .third-line__search-btn {
+        padding: 0 25px;
+    }
+
+}
+
+.nav-search__result {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+
+
+    position: absolute;
+    padding: 40px 20px;
+    top: 143px;
+    left: 0;
+    overflow-y: auto;
+    background: #fff;
+    z-index: 1;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+    @media (max-width: 762px) {
+        top: 167px
+    }
+
+    .table-card__container {
+        justify-content: start;
+        gap: 85px;
+    }
+
+    .inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &.active {
+        opacity: 1;
+    }
+
+    &-wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        /* Width of the vertical scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #fff;
+        width: 2px
+            /* Background color of the track */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #192965;
+        /* Color of the scrollbar thumb */
+        border-radius: 6px;
+        width: 2px
+            /* Rounded corners */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #192965;
+        width: 2px
+            /* Color of the scrollbar thumb on hover */
+    }
+
+    .nav-result__close {
+        display: flex;
+        align-self: flex-end;
+        width: 30px !important;
+        height: 30px !important;
+        position: relative;
+
+
+        &::after {
+            display: flex;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: #1E1E1E;
+            transform: rotate(45deg);
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 2px;
+            transform: rotate(135deg);
+            background: #1E1E1E;
+        }
+    }
+
+}

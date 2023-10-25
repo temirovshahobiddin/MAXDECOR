@@ -1,0 +1,277 @@
+.about-map__container {
+    position: relative;
+
+
+    width: 100%;
+}
+
+.about-map__map-img {
+    display: block;
+
+    width: 100%;
+}
+
+.point__stick {
+    width: 1px;
+    @include adaptiv-h(50, 9);
+
+    @include adaptivMargin(0, 0, 12, 0, 0, 0, 3, 0);
+
+    background-color: #fff;
+}
+
+.about-map__points-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.point__name-country {
+    color: #FFC93C;
+    font-family: Inter, sans-serif;
+    @include adaptiv-font(18, 3);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.point__name-country-active {
+    transition: all 0.2s ease-in-out 0s;
+
+    color: #ED4546 !important;
+}
+
+.point__circle {
+    @include adaptiv-w(10, 2);
+    @include adaptiv-h(10, 2);
+
+    background-color: #ED4546;
+    border-radius: 50%;
+
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.point__circle-active {
+    transition: all 0.2s ease-in-out 0s;
+
+    transform: scale(1.5);
+
+    background-color: #FFC93C;
+}
+
+.point__rus,
+.point__uzb,
+.point__kaz,
+.point__trk,
+.point__ira,
+.point__kir,
+.point__taj,
+.point__geo,
+.point__arm,
+.point__sir,
+.point__blr,
+.point__lat {
+    position: absolute;
+}
+
+
+.point__rus {
+    top: 25%;
+    left: 71%;
+}
+
+.point__uzb {
+    top: 51%;
+    left: 65%;
+
+    transform: translate(-50%, -90%);
+}
+
+.point__kaz {
+    flex-direction: row-reverse;
+    justify-content: center;
+
+    top: 46%;
+    left: 67%;
+
+    .point__stick {
+        height: 1px;
+        @include adaptiv-w(50, 9);
+
+        @include adaptivMargin(0, 6, 0, 12, 0, 1, 0, 3);
+    }
+}
+
+.point__trk {
+    flex-direction: row-reverse;
+    justify-content: center;
+
+    top: 51.5%;
+    left: 63%;
+
+    transform: rotate(45deg) translate(17%, 330%);
+
+    .point__stick {
+        height: 1px;
+        @include adaptiv-w(50, 9);
+
+        @include adaptivMargin(0, 6, 0, 12, 0, 1, 0, 3);
+    }
+
+    .point__name-country {
+        transform: rotate(-45deg) translate(15%, -140%);
+    }
+}
+
+.point__ira {
+    flex-direction: column-reverse;
+    top: 55.5%;
+    left: 61%;
+
+    transform: rotate(-20deg);
+
+    .point__stick {
+        @include adaptiv-h(18, 3);
+
+        @include adaptivMargin(12, 0, 0, 0, 3, 0, 0, 0);
+    }
+
+    .point__name-country {
+        transform: rotate(20deg);
+        color: #192965;
+    }
+}
+
+.point__kir {
+    flex-direction: row-reverse;
+    justify-content: center;
+
+
+    top: 50%;
+    left: 67.5%;
+
+    .point__stick {
+        height: 1px;
+        @include adaptiv-w(50, 9);
+
+        @include adaptivMargin(0, 6, 0, 12, 0, 1, 0, 3);
+    }
+}
+
+.point__taj {
+    flex-direction: row-reverse;
+    justify-content: center;
+
+    transform: rotate(10deg);
+
+
+    top: 54%;
+    left: 66%;
+
+    .point__stick {
+        height: 1px;
+        @include adaptiv-w(50, 9);
+
+        @include adaptivMargin(0, 6, 0, 12, 0, 1, 0, 3);
+    }
+
+    .point__name-country {
+        transform: rotate(-10deg) translate(0, -30%);
+    }
+}
+
+.point__geo {
+    flex-direction: row;
+    justify-content: center;
+
+    top: 51%;
+    left: 58.8%;
+
+    transform: rotate(20deg) translate(-93%, 67%);
+
+    .point__stick {
+        height: 1px;
+        @include adaptiv-w(50, 9);
+
+        @include adaptivMargin(0, 12, 0, 6, 0, 3, 0, 1);
+    }
+
+    .point__name-country {
+        transform: rotate(-20deg) translate(-10%, 40%);
+    }
+}
+
+.point__arm {
+    flex-direction: column-reverse;
+    top: 52.3%;
+    left: 59.3%;
+
+    transform: rotate(20deg) translate(-63%, 14%);
+
+    .point__stick {
+        @include adaptiv-h(36, 6);
+
+        @include adaptivMargin(12, 0, 0, 0, 3, 0, 0, 0);
+    }
+
+    .point__name-country {
+        transform: rotate(-20deg);
+    }
+
+}
+
+.point__sir {
+    flex-direction: row;
+    justify-content: center;
+
+    top: 55.2%;
+    left: 57.6%;
+
+    transform: rotate(-30deg) translate(-85%, -187%);
+
+    .point__stick {
+        height: 1px;
+        @include adaptiv-w(36, 6);
+
+        @include adaptivMargin(0, 12, 0, 6, 0, 3, 0, 1);
+    }
+
+    .point__name-country {
+        transform: rotate(30deg) translate(-15%, -60%);
+    }
+}
+
+.point__blr {
+    flex-direction: row;
+    justify-content: center;
+
+    top: 43.7%;
+    left: 55%;
+
+    transform: rotate(-10deg) translate(-100%, -100%);
+
+    .point__stick {
+        height: 1px;
+        @include adaptiv-w(12, 2);
+
+        @include adaptivMargin(0, 12, 0, 6, 0, 3, 0, 1);
+    }
+
+    .point__name-country {
+        transform: rotate(10deg) translate(0, -30%);
+
+        color: #192965;
+
+    }
+}
+
+.point__lat {
+    top: 41.3%;
+    left: 54%;
+
+    transform: translate(-50%, -94%);
+}

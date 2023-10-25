@@ -1,0 +1,898 @@
+.personalArea__header {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.personalArea__header-title_container {
+    display: flex;
+    column-gap: 80px;
+
+    .personalArea-link {
+        font-family: "AvenirNextCyr-Regular";
+        @include adaptiv-font(23, 14);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        color: #1E1E1E;
+        cursor: pointer;
+        padding: 40px 10px;
+        position: relative;
+        transition: all .4s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            background: #1E1E1E;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            width: 0;
+        }
+
+        &.disabled {
+            z-index: -1;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        &.active {
+            color: #1E1E1E;
+            font-family: $medium;
+            @include adaptiv-font(23, 14);
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px;
+        }
+
+        &.active::after {
+            width: 100%;
+            transition: all .4s;
+        }
+    }
+}
+
+
+
+
+
+
+
+.personalArea__heade_under-line {
+    width: 100%;
+    height: 1px;
+
+    margin-top: -1px;
+
+    background-color: #707070;
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+// Таблица заказов
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.personalArea__table-order {
+    width: 1470px;
+    margin: 0 auto;
+}
+
+
+// Header таблицы
+
+.personalArea__table-header {
+    display: flex;
+
+    padding-bottom: 20px;
+    margin-top: 70px;
+    border-bottom: solid 1.3px #000;
+
+    div {
+        color: #000;
+        font-family: $medium;
+        @include adaptiv-font(18, 10);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 31px;
+        text-transform: uppercase;
+    }
+}
+
+
+
+.table-header_order {
+    width: 375px;
+}
+
+.table-header_date {
+    width: 280px;
+}
+
+.table-header_quantity {
+    width: 300px;
+}
+
+.table-header_price {
+    width: 290px;
+}
+
+// Body таблицы
+.personalArea__table-empty {
+    width: 100%;
+    padding: 15px 20px;
+    background: #EFEFEF;
+    border-top: 2px solid #192965;
+
+}
+
+.table-body__row {
+    display: flex;
+    flex-direction: column;
+
+    div {
+        color: #707070;
+        font-family: $medium;
+        @include adaptiv-font(18, 10);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 33px;
+    }
+
+    .table-body_order {
+        @include adaptiv-font(25, 12);
+    }
+
+    .table-body_status {
+        max-width: 150px;
+        width: 100%;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 21.216px;
+        border: 0.758px solid #ED1E31;
+        color: #ED1E31;
+    
+        &.delivered {
+            border: 0.758px solid #0156FF;
+            color: #0156FF;
+        }
+    }
+}
+
+
+.table-body__content {
+    display: flex;
+    align-items: center;
+
+    padding: 25px 0;
+}
+
+
+
+.table-body_order {
+    width: 375px;
+}
+
+.table-body_date {
+    width: 280px;
+}
+
+.table-body_quantity {
+    width: 300px;
+}
+
+.table-body_price {
+    width: 290px;
+}
+
+
+
+.table-body_under-line {
+    width: 100%;
+    height: 1px;
+
+    background-color: #D8D8D8;
+}
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+// Избранное
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.personalArea__select {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 75px;
+
+}
+
+
+// Карточка
+.personalArea-card__container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 520px;
+    width: 100%;
+}
+
+.personalArea-card__under-line {
+    width: 100%;
+    height: 1px;
+    background-color: #707070;
+}
+
+.personalArea-card__item {
+    position: relative;
+
+    display: flex;
+    cursor: pointer;
+
+    max-width: 520px;
+    width: 100%;
+    height: 147px;
+
+    margin-bottom: 40px;
+}
+
+.personalArea-card__img {
+    width: 133px;
+    height: 147px;
+
+    img {
+        width: 133px;
+        height: 147px;
+
+        object-fit: cover;
+        object-position: center;
+
+        border-radius: 7px;
+    }
+
+}
+
+.personalArea-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-left: 20px;
+}
+
+.personalArea-card-item__name {
+    color: #1E1E1E;
+    font-family: "AvenirNextCyr-Regular";
+    @include adaptiv-font(18, 14);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.personalArea-card-item__price {
+    color: #192965;
+    font-family: "AvenirNextCyr-Regular";
+    @include adaptiv-font(14, 11);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+}
+
+.personalArea-card-item__add-basket {
+    color: #192965;
+    font-family: "AvenirNextCyr-Regular";
+    @include adaptiv-font(16, 12);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    border-bottom: solid 1px #192965;
+
+    cursor: pointer;
+}
+
+.personalArea-card-item__delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    cursor: pointer;
+}
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+// Выход из аккаунта
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.personalArea__exit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        width: 125px;
+        height: 125px;
+
+        margin-bottom: 50px;
+    }
+
+    p {
+        color: #1E1E1E;
+        text-align: center;
+        font-family: $medium;
+        @include adaptiv-font(20, 12);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+
+.personalArea__exit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+    height: 50px;
+
+    margin-top: 100px;
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(16, 9);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    border-radius: 30px;
+    border: 1px solid #1E1E1E;
+
+    transition: all 0.2s linear 0s;
+
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        color: #1E1E1E;
+        background-color: #F3F3F3;
+        border-color: #F3F3F3;
+    }
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+// Класс переключения таблиц
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.personalArea__dis-none {
+    display: none !important;
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Медиазапросы
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@media (max-width: 1500px) {
+    .personalArea__header {
+        padding: 0 20px;
+    }
+
+    .personalArea__select {
+        padding: 0 20px;
+    }
+
+    .personalArea__table-order {
+        width: 1365px;
+    }
+
+
+
+
+    .table-header_order,
+    .table-body_order {
+        width: 350px;
+    }
+
+    .table-header_date,
+    .table-body_date {
+        width: 260px;
+    }
+
+    .table-header_quantity,
+    .table-body_quantity {
+        width: 280px;
+    }
+
+    .table-header_price,
+    .table-body_price {
+        width: 270px;
+    }
+
+}
+
+@media (max-width: 1370px) {
+
+    .table-header_order,
+    .table-body_order {
+        width: 320px;
+    }
+
+    .table-header_date,
+    .table-body_date {
+        width: 240px;
+    }
+
+    .table-header_quantity,
+    .table-body_quantity {
+        width: 260px;
+    }
+
+    .table-header_price,
+    .table-body_price {
+        width: 250px;
+    }
+
+    .personalArea__table-order {
+        width: 1285px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    .table-header_order,
+    .table-body_order {
+        width: 300px;
+    }
+
+    .table-header_date,
+    .table-body_date {
+        width: 200px;
+    }
+
+    .table-header_quantity,
+    .table-body_quantity {
+        width: 240px;
+    }
+
+    .table-header_price,
+    .table-body_price {
+        width: 230px;
+    }
+
+    .personalArea__table-order {
+        width: 1205px;
+    }
+
+    .personalArea__header-title_container {
+        column-gap: 60px;
+
+        .personalArea-link {
+            padding: 30px 10px;
+        }
+    }
+}
+
+@media (max-width: 762px) {
+    .personalArea__header {
+        margin-bottom: 60px;
+        margin-top: 20px;
+    }
+
+
+
+    .table-header_order,
+    .table-body_order {
+        width: 280px;
+    }
+
+    .table-header_date,
+    .table-body_date {
+        width: 180px;
+    }
+
+    .table-header_quantity,
+    .table-body_quantity {
+        width: 220px;
+    }
+
+    .table-header_price,
+    .table-body_price {
+        width: 210px;
+    }
+
+    .personalArea__table-order {
+        width: 1125px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .personalArea__header-title_container {
+        column-gap: 40px;
+
+        .personalArea-link {
+            padding: 20px 8px;
+        }
+    }
+
+
+
+    .personalArea__header {
+        margin-bottom: 35px;
+        margin-top: 10px;
+    }
+
+    .table-body__content {
+        padding: 5px 0;
+    }
+
+
+
+    .table-header_order,
+    .table-body_order {
+        width: 240px;
+    }
+
+    .table-header_date,
+    .table-body_date {
+        width: 140px;
+    }
+
+    .table-header_quantity,
+    .table-body_quantity {
+        width: 180px;
+    }
+
+    .table-header_price,
+    .table-body_price {
+        width: 170px;
+    }
+
+    .personalArea__table-order {
+        width: 900px;
+    }
+
+    .personalArea-card__item {
+        height: 100px;
+    }
+
+    .personalArea-card__img {
+        width: 100px;
+        height: 114px;
+
+        img {
+            width: 100px;
+            height: 114px;
+        }
+
+    }
+
+
+    .personalArea__exit {
+        img {
+            width: 100px;
+            height: 100px;
+
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    }
+
+    .personalArea__exit-btn {
+
+        width: 200px;
+        height: 30px;
+
+        margin-top: 60px;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+// Модальное окно заказа звонка
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.call__card {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    overflow-y: auto;
+
+    width: 100%;
+    height: 100%;
+}
+
+.call__card_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #0000002f;
+}
+
+
+.call-form__container-bg {
+    width: 100%;
+    background-color: #F5F5F7;
+
+    padding: 80px 0 300px 0;
+}
+
+
+
+.call-form__container-pos {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    top: 50%;
+    left: 50%;
+    margin-top: -460px;
+    margin-left: -340px;
+
+
+
+    width: 680px;
+    height: 920px;
+
+    background-color: #FFF;
+}
+
+
+.call-form__close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+}
+
+.close__line-1 {
+    position: absolute;
+    top: 3px;
+    left: 14px;
+
+    width: 1px;
+    height: 25px;
+    background-color: #000;
+    transform: rotate(45deg);
+}
+
+.close__line-2 {
+    position: absolute;
+    top: 3px;
+    left: 14px;
+
+    width: 1px;
+    height: 25px;
+    background-color: #000;
+    transform: rotate(-45deg);
+}
+
+
+
+.call-form__title {
+    margin-bottom: 25px;
+
+    color: #1E1E1E;
+    font-family: $medium;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+}
+
+.call-form__subtitle {
+    margin-bottom: 50px;
+
+    color: #707070;
+    text-align: center;
+    font-family: "AvenirNextCyr-Light";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    text-align: center;
+}
+
+.call-form__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    row-gap: 35px;
+
+    z-index: 1;
+}
+
+
+.call-form__name-cont,
+.call-form__tel-cont,
+.call-form__email-cont {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-bottom: 8px;
+
+        color: #1E1E1E;
+        font-family: "AvenirNextCyr-Regular";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.38px;
+
+        cursor: pointer;
+    }
+
+    input {
+        width: 510px;
+
+        padding: 6px 0;
+
+        color: #1E1E1E;
+        font-family: $medium;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        border: none;
+        outline: none;
+        border-bottom: solid 1px #1E1E1E;
+
+        &[type="name"],
+        &[type="name"]::-webkit-outer-spin-button,
+        &[type="name"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        &[type="tel"],
+        &[type="tel"]::-webkit-outer-spin-button,
+        &[type="tel"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        &[type="email"],
+        &[type="email"]::-webkit-outer-spin-button,
+        &[type="email"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    }
+}
+
+.call-form__btn-subm {
+    width: 445px;
+    height: 53px;
+
+    margin-top: 60px;
+
+    border-radius: 4px;
+    background: #192965;
+
+    border: none;
+
+    color: #FFF;
+    font-family: $medium;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.47px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        background: #0d1636
+    }
+}

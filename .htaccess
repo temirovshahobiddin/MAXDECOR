@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# Перенаправление на index.html для всех запросов, кроме существующих файлов и папок
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]

@@ -1,0 +1,240 @@
+.location__conatiner {
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.location__title {
+    color: #1e1e1e;
+    font-family: $medium;
+    @include adaptiv-font(30, 15);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+
+    @include adaptivPadding(90, 0, 30, 0, 30, 0, 10, 0);
+}
+
+.location-cards__container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr)
+}
+
+.location-card {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 60px;
+
+    width: 100%;
+
+    @include adaptivPadding(65, 0, 65, 0, 20, 0, 20, 0);
+
+    border-bottom: 2px solid #1E1E1E;
+
+
+}
+
+.location-card__name_small-screen {
+    display: none;
+
+
+}
+
+.location-card__img-container {
+    max-width: 450px;
+}
+
+.location-card__img {
+    display: block;
+
+    width: 100%;
+
+    object-fit: cover;
+}
+
+.location-card__content-container {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.location-card__first-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.location-card__name {
+    color: #000;
+    font-family: $medium;
+    @include adaptiv-font(30, 18);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+
+    @media (max-width: 1400px) {
+        display: none;
+    }
+}
+
+.location-card__subtitle {
+    color: #000;
+    font-family: $regular;
+    @include adaptiv-font(25, 18);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.25px;
+
+    margin: 70px 0 110px 0;
+}
+
+.location-card__qualityMark {
+    color: #FF5465;
+    font-family: $medium;
+    @include adaptiv-font(20, 13);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+}
+
+.location-card__second-column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+}
+
+.location-card__working-hours-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.location-card__firstWorkingHours,
+.location-card__secondWorkingHours {
+    color: #000;
+    text-align: right;
+    font-family: $regular;
+    @include adaptiv-font(25, 16);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.25px;
+}
+
+.location-card__address {
+    color: #000;
+    text-align: right;
+    font-family: $regular;
+    @include adaptiv-font(25, 16);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.25px;
+
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+
+        color: #FF5465;
+    }
+}
+
+.location-card__tel {
+    color: #000;
+    text-align: right;
+    font-family: $regular;
+    @include adaptiv-font(25, 16);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.25px;
+
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+
+        color: #FF5465;
+    }
+}
+
+
+@media (max-width:1510px) {
+    .location__conatiner {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width:1400px) {
+    .location__title {
+        text-align: center;
+    }
+
+    .location-cards__container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .location-card {
+        flex-direction: column;
+
+        max-width: 450px;
+    }
+
+    .location-card__name_small-screen {
+        display: flex;
+
+        @include adaptivPadding(0, 0, 40, 0, 0, 0, 25, 0);
+
+        color: #000;
+        font-family: $medium;
+        @include adaptiv-font(30, 18);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+    }
+
+    .location-card__content-container {
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    .location-card__subtitle {
+        @include adaptivMargin(40, 0, 40, 0, 15, 0, 15, 0);
+    }
+
+    .location-card__firstWorkingHours,
+    .location-card__secondWorkingHours,
+    .location-card__address,
+    .location-card__tel {
+        text-align: start;
+    }
+
+    .location-card__second-column {
+        row-gap: 22px;
+    }
+}
+
+
+
+
+@media(max-width:1000px) {
+    .location-cards__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width:490px) {
+    .location__title {
+        text-align: left;
+    }
+}

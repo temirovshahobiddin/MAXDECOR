@@ -1,0 +1,535 @@
+.filter__container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+
+
+// Кнопка фильтра
+.filter__btn {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 25px;
+
+    margin-top: 50px;
+    margin-bottom: 37px;
+
+    cursor: pointer;
+
+}
+
+
+
+
+.table-picture {
+    max-width: max-content !important;
+    width: 100%;
+}
+
+.table-filter__picture {
+    display: flex;
+    flex-direction: column;
+    row-gap: 17px;
+    flex-wrap: wrap;
+    height: 200px;
+
+    /*     justify-content: end; */
+    flex-grow: 1;
+    margin: 0 !important;
+    column-gap: 75px;
+
+    @media (max-width: 760px) {
+        flex-wrap: nowrap;
+        height: 100%;
+    }
+}
+
+.filter__btn__icon {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 30px;
+    height: 16px;
+
+    .btn_top-line {
+        position: relative;
+        width: 100%;
+        height: 2px;
+
+        background-color: #192965;
+
+
+
+        .btn_top-circle {
+            position: absolute;
+            top: -3px;
+            left: 3px;
+
+            width: 8px;
+            height: 8px;
+            background-color: #192965;
+
+            border-radius: 50%;
+
+            transition: all 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+        }
+    }
+
+    .btn_bot-line {
+        position: relative;
+        width: 100%;
+        height: 2px;
+
+        background-color: #192965;
+
+        .btn_bot-circle {
+            position: absolute;
+            bottom: -3px;
+            right: 3px;
+
+            width: 8px;
+            height: 8px;
+            background-color: #192965;
+
+            border-radius: 50%;
+
+            transition: all 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+        }
+    }
+
+}
+
+.filter__btn__txt {
+    color: #192965;
+    font-family: $medium;
+    @include adaptiv-font(24, 12);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: 3px;
+
+
+    @media (max-width: 762px) {
+        letter-spacing: -0.5px;
+        font-weight: 550;
+    }
+}
+
+
+
+
+
+.filter__btn-active-top {
+    transform: translateX(16px);
+
+    transition: all 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+.filter__btn-active-bot {
+    transform: translateX(-16px);
+
+    transition: all 0.3s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+
+
+// Таблица филтьтра
+
+.table-filter__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 2;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    transition: all 0.5s ease-out 0.2s;
+}
+
+.table-filter__visible {
+    overflow: visible;
+    opacity: 1;
+    transition: all 0.5s ease-out 0.2s;
+}
+
+.table-filter__column-pos {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.table-filter__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+
+    margin-right: 25px;
+}
+
+.table-filter__title {
+    color: #192965;
+    font-family: $medium;
+    @include adaptiv-font(26, 21);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 180%;
+
+    @media (max-width: 762px) {
+        letter-spacing: -0.5px;
+        font-weight: 550;
+    }
+}
+
+
+
+
+.table-filter__element {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+
+    cursor: pointer;
+
+    .table-filter__marker {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 30px;
+        height: 30px;
+
+        border-radius: 50%;
+        border: 1px solid #1E1E1E;
+
+        img {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    p {
+        color: #1E1E1E;
+        font-family: $light;
+        @include adaptiv-font(20, 15);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 180%;
+    }
+}
+
+
+
+// Стили цвета в фильтре
+
+.table-filter__color-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+}
+
+.table-filter__color_row {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 23px;
+    flex-wrap: wrap;
+    max-width: 214px;
+    width: 100%;
+}
+
+
+
+.table-filter__color-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+
+    transition: all .2s;
+
+    &.active {
+        transition: all .2s;
+        border: solid 3px #192965;
+    }
+
+    cursor: pointer;
+}
+
+.table-filter__color-disable____test {
+    border: none;
+    background-color: #85AEFF;
+}
+
+.table-filter__color.active {
+    width: 80%;
+    transition: all .2s;
+    height: 80%;
+}
+
+
+
+.table-filter__color {
+    width: 100%;
+    height: 100%;
+    transition: all .2s;
+
+    border-radius: 50%;
+}
+
+
+
+
+.table-filter__search-btn {
+    margin-top: 24px;
+    margin-bottom: 40px;
+    margin-right: 44px;
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(16, 10);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    border-bottom: solid #1E1E1E 1px;
+
+    cursor: pointer;
+
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        color: #192965;
+        border-color: #192965;
+    }
+
+    @media (max-width: 762px) {
+        letter-spacing: -0.5px;
+        font-weight: 550;
+    }
+}
+
+.reset-filter {
+    color: #192965;
+    font-family: $medium;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    display: none;
+
+    @media (max-width: 762px) {
+        letter-spacing: -0.5px;
+        font-weight: 550;
+    }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Медиазапросы
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@media (max-width: 1500px) {
+    .filter__container {
+        padding: 0 20px;
+    }
+
+    .table-filter__column-pos {
+        flex-wrap: wrap;
+        row-gap: 30px;
+    }
+
+    .table-filter__column {
+        row-gap: 30px;
+
+        max-width: 210px;
+        width: 100%;
+        margin-left: 30px;
+    }
+
+}
+
+@media (max-width: 1220px) {
+    .table-filter__column-pos {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 762px) {
+    .table-filter__container {
+        position: absolute;
+        top: 0px;
+        left: 0;
+
+        width: 80vw;
+
+        align-items: flex-start;
+
+        z-index: 1;
+        background: #F8F8F8;
+        transform: translateX(-800px);
+        transition: all 0.5s linear 0s;
+    }
+
+    .table-filter__visible {
+        transform: translateX(0);
+
+        transition: all 0.5s linear 0s;
+    }
+
+    .table-filter__search-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 143px;
+        height: 38px;
+
+        margin: 60px 0 60px 30px;
+        padding: 13px 0;
+
+        border-radius: 20px;
+        background: #192965;
+
+        border: none;
+
+        color: #FFFFFF;
+    }
+
+    .table-filter__element {
+        .table-filter__marker {
+            width: 27px;
+            height: 27px;
+
+            img {
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
+
+    .table-filter__color-active {
+        width: 36px;
+        height: 36px;
+
+        &.active {
+            transition: all .2s;
+            border: solid 2px #192965;
+        }
+
+
+    }
+
+
+
+    .reset-filter {
+        display: block;
+
+        margin: 25px 0px 10px 65%;
+    }
+
+    .table-filter__column-pos {
+        justify-content: flex-start;
+    }
+
+    .table-filter__color-container {
+        margin-left: 30px;
+    }
+
+    .table-filter__color.active {
+        width: 80%;
+        transition: all .2s;
+        height: 80%;
+    }
+
+
+
+    .table-filter__color {
+        width: 100%;
+        height: 100%;
+        transition: all .2s;
+
+        border-radius: 50%;
+    }
+
+
+
+    // Кнопка фильтра
+    .filter__btn {
+
+        border-radius: 20px;
+        column-gap: 15px;
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .filter__btn__icon {
+        width: 25px;
+        height: 10px;
+
+        margin-left: 15px;
+
+        .btn_top-line {
+            background-color: #192965;
+
+            .btn_top-circle {
+                position: absolute;
+                top: -2px;
+                left: 3px;
+
+                width: 6px;
+                height: 6px;
+                background-color: #192965;
+            }
+        }
+
+        .btn_bot-line {
+            background-color: #192965;
+
+            .btn_bot-circle {
+                bottom: -2px;
+                right: 3px;
+
+                width: 6px;
+                height: 6px;
+                background-color: #192965;
+            }
+        }
+
+    }
+
+    .filter__btn__txt {
+        color: #192965;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: 3px;
+
+        margin-right: 15px;
+    }
+
+
+
+    .filter__btn-active-top {
+        transform: translateX(13px);
+    }
+
+    .filter__btn-active-bot {
+        transform: translateX(-13px);
+    }
+
+}

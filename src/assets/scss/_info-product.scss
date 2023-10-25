@@ -1,0 +1,779 @@
+.info-product {
+    .navigation-chain__container {
+        display: flex;
+        align-items: center;
+        column-gap: 25px;
+        height: 50px;
+
+        margin: 50px auto;
+
+        a {
+            color: #1E1E1E;
+            font-family: $medium;
+            @include adaptiv-font(20, 14);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 180%;
+        }
+
+        .navigation-chain__current {
+            color: #1E1E1E;
+            font-family: "AvenirNextCyr-Regular";
+            @include adaptiv-font(20, 14);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 37px;
+        }
+    }
+
+
+
+    .navigation-chain__delimiter {
+        width: 71px;
+        height: 1px;
+
+        background-color: #1E1E1E;
+    }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+// Информация о товаре
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.description-product__container {
+    display: flex;
+    column-gap: 55px;
+}
+
+.description-product__left-card {
+    width: 719px;
+
+    border-radius: 6px 6px 6px 0px;
+    background: #F3F3F3;
+}
+
+.description-product__left-card_title {
+    color: #192965;
+    font-family: $medium;
+    @include adaptiv-font(25, 10);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 33px;
+    margin: 20px 0 12px 36px;
+}
+
+.description-product__left-card_body {
+    color: #1E1E1E;
+    font-family: "AvenirNextCyr-Regular";
+    @include adaptiv-font(18, 10);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    margin: 0 46px 35px 33px;
+}
+
+
+
+.description-product__right-card {
+    display: flex;
+    width: 690px;
+    height: 135px;
+
+    p {
+        margin: 20px 0;
+        color: #1E1E1E;
+        font-family: "AvenirNextCyr-Regular";
+        @include adaptiv-font(18, 10);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+}
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+// Карточка продукта
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+.card-product__container {
+    display: flex;
+    column-gap: 60px;
+
+    margin-top: 80px;
+}
+
+
+
+
+.card-product__img-container {
+    max-width: 712px;
+    width: 100%;
+
+}
+
+.card-product__img {
+    max-width: 712px;
+    width: 100%;
+    height: 713px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #FAF9F9;
+
+    .card-product__default {
+        display: flex;
+        flex-direction: column;
+        right: 25px;
+        align-items: center;
+
+        &-title {
+            color: #787878;
+
+            font-family: $regular;
+            font-size: 25.846px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-transform: lowercase;
+        }
+    }
+
+    &-img {
+        object-position: center;
+        object-fit: cover;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+
+
+.card-product__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 700px;
+    width: 100%;
+
+
+
+
+}
+
+
+
+
+.card-product__title-container {
+    display: flex;
+}
+
+.card-product__title {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-product__title_name {
+    padding-right: 35px;
+    border-right: solid 1px #707070;
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(25, 18);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 33px;
+}
+
+.card-product__title_vendor {
+    color: #1E1E1E;
+    font-family: "AvenirNextCyr-Regular";
+    @include adaptiv-font(16, 12);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 33px;
+}
+
+.card-product__title-icon {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 25px;
+
+    border-radius: 50%;
+    position: relative;
+
+
+    cursor: pointer;
+
+    .heart-container {
+        position: absolute;
+        top: 3px;
+        right: 0;
+        cursor: no-drop;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+
+
+        .like-btn {
+            color: #192965;
+            font-size: 30px;
+            transition: all .4s;
+
+            &.liked {
+                color: #ED4546;
+            }
+        }
+
+        cursor: pointer;
+    }
+}
+
+
+
+
+.card-product__options-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+}
+
+.card-product__options {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 7px;
+}
+
+.card-product__options_key {
+    color: #1E1E1E;
+    font-family: "AvenirNextCyr-Regular";
+    @include adaptiv-font(14, 12);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    white-space: nowrap;
+}
+
+.card-product__options_line {
+    width: 100%;
+    height: 1px;
+    border-bottom: dotted 1px #1E1E1E;
+    margin-bottom: 5px;
+}
+
+.card-product__options_value {
+
+    color: #1E1E1E;
+    text-align: right;
+    font-family: $medium;
+    @include adaptiv-font(14, 12);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19px;
+    white-space: nowrap;
+}
+
+
+.card-product__options-wrapper {
+    display: flex;
+
+}
+
+.card-product__price-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    column-gap: 35px;
+    row-gap: 10px;
+}
+
+.card-product__price {
+    color: #192965;
+    font-family: $medium;
+    @include adaptiv-font(20, 15);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+.card-product__price-descr {
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(14, 12);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19px;
+    color: #192965;
+
+}
+
+.card-product__price-title {
+    line-height: 100%;
+    font-size: 16px;
+
+}
+
+.card-product__price-wrapper {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    max-width: 190px;
+    width: 100%;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+
+.card-product__quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #EFEFEF;
+    width: 102px;
+
+    .card-product__minus {
+        background: #EFEFEF;
+
+        border-radius: 4px 0 0 4px;
+
+        padding: 14.3px;
+
+        cursor: pointer;
+    }
+
+    .card-product__plus {
+        background: #EFEFEF;
+
+        border-radius: 0 4px 4px 0;
+
+        padding: 14.3px;
+
+        cursor: pointer;
+    }
+
+    .card-product__input {
+        max-width: 35px;
+
+        color: #1E1E1E;
+        @include adaptiv-font(16, 14);
+        font-family: $medium;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 27px;
+        background: #EFEFEF;
+        text-align: center;
+
+        padding: 9px 0;
+
+        border: none;
+        outline: none;
+
+        &[type="number"],
+        &[type="number"]::-webkit-outer-spin-button,
+        &[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    }
+}
+
+
+.card-product__btn-container {
+    display: flex;
+    justify-content: flex-start;
+
+    width: 100%;
+}
+
+.card-product__btn-call {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 264px;
+    width: 100%;
+
+    height: 54px;
+
+    margin-right: 20px;
+
+    border-radius: 15px;
+    background: #192965;
+
+    color: #FFF;
+    font-family: $medium;
+    @include adaptiv-font(13, 10);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 180%;
+
+    transition: all 0.2s linear 0s;
+
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        background-color: #324dad;
+    }
+}
+
+.constructor-modal__submit {
+    cursor: pointer !important;
+
+    &:hover {
+        background-color: #324dad !important;
+    }
+}
+
+.card-product__add-basket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 264px;
+    width: 100%;
+    height: 54px;
+
+    border-radius: 15px;
+    border: 1px solid #1E1E1E;
+    background: #FFF;
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(13, 10);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    transition: all 0.2s linear 0s;
+
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        color: #1E1E1E;
+        background-color: #F3F3F3;
+        border-color: #F3F3F3;
+    }
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Медиазапросы (и стили для мобильной версии)
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@media (max-width:1500px) {
+    .navigation-chain__container {
+        padding: 0 20px;
+    }
+
+    .description-product__container {
+        padding: 0 20px;
+    }
+
+    .card-product__container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width:1300px) {
+    .card-product__img {
+        height: 600px;
+    }
+}
+
+@media(max-width: 1279px) {
+    .card-product__container {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+
+        margin-top: 50px;
+    }
+
+    .description-product__container {
+        display: none;
+    }
+
+    .card-product__btn-container {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+    }
+
+    .card-product__info {
+        row-gap: 30px;
+    }
+
+
+
+    .card-product__btn-call,
+    .card-product__add-basket {
+        max-width: 360px;
+        width: 100%;
+
+        margin: 0;
+    }
+}
+
+@media (max-width:1000px) {
+    .card-product__img {
+        height: 500px;
+    }
+
+    .card-product__btn-call,
+    .card-product__add-basket {
+        height: 44px;
+    }
+}
+
+
+
+@media (max-width:762px) {
+
+    .card-product__img {
+        height: 300px;
+    }
+
+}
+
+
+.product-carousel__mob {
+    display: flex;
+
+
+    width: 100%;
+
+
+    @media (max-width: 1280px) {
+        display: none;
+        column-gap: 20px;
+
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            height: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #eaeaea;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #192965;
+            height: 3px;
+            border-radius: 20px;
+        }
+    }
+
+
+}
+
+.product-carousel__mob-slide {
+    margin-bottom: 20px;
+
+
+
+    .product-carousel__mob-slide__img {
+        display: block;
+        width: 88px;
+        height: 88px;
+        object-fit: cover;
+
+        img {
+            display: block;
+            width: 88px;
+            height: 88px;
+            object-fit: cover;
+        }
+    }
+
+    p {
+        text-align: left;
+
+        color: #1E1E1E;
+        font-family: $medium;
+        @include adaptiv-font(17, 7);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 180%;
+
+        span {
+            font-family: $medium;
+            font-weight: 500;
+        }
+    }
+}
+
+.select-slide {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 25px;
+        height: 25px;
+
+        content: url("../img/product/check.svg");
+        transform: translate(-50%, -50%);
+
+        z-index: 2;
+    }
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        content: "";
+
+        transform: translate(-50%, -50%);
+
+        width: 40px;
+        height: 40px;
+
+        background-color: #ffffff7a;
+        border-radius: 50%;
+        backdrop-filter: blur(1px);
+    }
+}
+
+
+
+
+// Информация о товаре для мобильной версии
+.product-carousel__mob-container {
+    height: 160px !important;
+    cursor: pointer !important;
+
+    @media (max-width: 1280px) {
+        display: none;
+    }
+
+    .product-carousel__mob-slide {
+        display: flex;
+        flex-direction: column !important;
+    }
+}
+
+.description-product__wrapper-mob {
+    display: none;
+
+    .product-carousel__mob {
+        @media (max-width: 1280px) {
+            display: flex;
+        }
+    }
+}
+
+.description-product__btn-mob {
+    display: flex;
+    column-gap: 6px;
+    align-items: center;
+
+    color: #192965;
+
+    font-family: $medium;
+    @include adaptiv-font(20, 15);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.description-product__arrow {
+    transition: all 0.2s linear 0s;
+}
+
+.description-product__arrow__active {
+    transform: rotate(180deg);
+    transition: all 0.2s linear 0s;
+}
+
+
+
+
+
+.description-product__container-mob {
+    max-height: 0px;
+    opacity: 0;
+    overflow: hidden;
+
+    transition: all 0.2s linear 0s;
+}
+
+.description-product__container-mob__active {
+    opacity: 1;
+    overflow: visible;
+
+    transition: all 0.2s linear 0s;
+}
+
+
+@media (max-width:1280px) {
+    .description-product__wrapper-mob {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+}
+
+.description-product__top-mob__container {
+    padding: 15px;
+    border-radius: 2px;
+    background: #F3F3F3;
+}
+
+.description-product__top-mob__title {
+    color: #192965;
+    font-family: $medium;
+    @include adaptiv-font(25, 10);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 33px;
+}
+
+.description-product__top-mob__text {
+    color: #1E1E1E;
+    font-family: "AvenirNextCyr-Regular";
+    @include adaptiv-font(18, 10);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.description-product__bot-mob__text {
+    padding: 15px;
+
+    color: #1E1E1E;
+    font-family: "AvenirNextCyr-Regular";
+    @include adaptiv-font(18, 10);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}

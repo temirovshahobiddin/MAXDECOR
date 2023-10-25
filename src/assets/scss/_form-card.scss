@@ -1,0 +1,187 @@
+.form__container-bg {
+    width: 100%;
+
+    overflow: hidden;
+
+    @include adaptivPadding(80, 0, 300, 0, 50, 0, 200, 0);
+
+    background-color: #F5F5F7;
+}
+
+.form__container-pos {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0 20px;
+}
+
+
+
+.form__title {
+    @include adaptivMargin(0, 0, 80, 0, 0, 0, 25, 0);
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(35, 16);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+
+    @media (max-width: 762px) {
+        letter-spacing: -0.5px;
+        font-weight: 550;
+    }
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-row-gap(35, 20);
+
+    @include adaptiv-mw(510, 320);
+    width: 100%;
+
+    z-index: 1;
+}
+
+
+.form__name-cont,
+.form__tel-cont,
+.form__email-cont {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        @include adaptivMargin(0, 0, 8, 0, 0, 0, 4, 0);
+
+        color: #1E1E1E;
+        font-family: $regular;
+        @include adaptiv-font(18, 13);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.38px;
+
+        cursor: pointer;
+    }
+
+    input {
+        max-width: 510px;
+        width: 100%;
+
+        @include adaptivPadding(6, 0, 6, 0, 3, 0, 3, 0);
+
+        color: #1E1E1E;
+        font-family: $medium;
+        @include adaptiv-font(16, 14);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+        background-color: #F5F5F7;
+
+        border: none;
+        outline: none;
+        border-bottom: solid 1px #1E1E1E;
+
+        &[type="name"],
+        &[type="name"]::-webkit-outer-spin-button,
+        &[type="name"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        &[type="tel"],
+        &[type="tel"]::-webkit-outer-spin-button,
+        &[type="tel"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        &[type="email"],
+        &[type="email"]::-webkit-outer-spin-button,
+        &[type="email"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        @media (max-width: 762px) {
+            letter-spacing: -0.5px;
+            font-weight: 550;
+        }
+    }
+}
+
+.form__btn-subm_container {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    @include adaptivMargin(55, 0, 0, 0, 15, 0, 0, 0);
+}
+
+.form__btn-subm {
+    @include adaptiv-w(407, 212);
+    @include adaptiv-h(64, 33);
+
+    @include adaptiv-border-radius(15, 8);
+
+    background: #192965;
+
+    border: none;
+
+    color: #FFF;
+    font-family: $medium;
+    @include adaptiv-font(16, 8);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.47px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all 0.2s linear 0s;
+
+    &:hover {
+        transition: all 0.2s linear 0s;
+        background: #324dad;
+    }
+
+    @media (max-width: 762px) {
+        letter-spacing: -0.5px;
+        font-weight: 550;
+    }
+}
+
+.form__img-decor {
+    display: flex;
+    position: absolute;
+    bottom: -220px;
+}
+
+.form__descritor {
+    position: absolute;
+    top: 165px;
+    left: 230px;
+
+    width: 330px;
+
+    color: #1E1E1E;
+    text-align: center;
+    font-family: $regular;
+    @include adaptiv-font(18, 11);
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1px;
+
+ }
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// Медиазапросы
+//
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

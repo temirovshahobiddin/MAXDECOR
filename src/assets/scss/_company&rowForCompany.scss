@@ -1,0 +1,318 @@
+.about__title {
+    @include adaptivMargin(85, 0, 85, 0, 25, 0, 25, 0);
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(30, 18);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.about-discription__wrapper {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+
+    @include adaptivMargin(0, 0, 130, 0, 0, 0, 80, 0);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+// about-discription
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.about-discription__first-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+.about-discription__paragraph {
+    color: #1E1E1E;
+    font-family: $regular;
+    @include adaptiv-font(22, 18);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+
+    transition: all 0.2s linear 0s;
+}
+
+.about-discription__container_btn-open {
+    display: none;
+    justify-content: flex-end;
+}
+
+.about-discription__btn-open {
+    color: #192965;
+    font-family: DM Sans, $regular, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 166.667%;
+    text-decoration-line: underline;
+
+    cursor: pointer;
+}
+
+.about-discription__second-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.about-discription__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-discription-card__img {
+    @include adaptiv-h(90, 60);
+    @include adaptivMargin(0, 0, 10, 0, 0, 0, 1, 0);
+}
+
+.about-discription-card__title {
+    color: #192965;
+    font-family: $medium;
+    @include adaptiv-font(22, 16);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 180%;
+    text-align: center;
+}
+
+.about-discription-card__subtitle {
+    display: flex;
+    align-content: center;
+
+    color: #518581;
+    font-family: $regular;
+    @include adaptiv-font(22, 16);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 133%;
+    text-align: center;
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+// video
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.about-video__container {
+    width: 100%;
+    @include adaptiv-h(750, 250);
+}
+
+.about__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// 
+// history
+// 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.about-history__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-history__title {
+    @include adaptivMargin(85, 0, 0, 0, 25, 0, 0, 0);
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(30, 18);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.about-history__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-bottom: 1px solid #1E1E1E;
+}
+
+.about-history__year {
+    @include adaptivMargin(80, 0, 50, 0, 50, 0, 35, 0);
+
+    color: #192965;
+    text-align: center;
+    font-family: $medium;
+    font-size: 36px;
+    @include adaptiv-font(36, 36);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 180%;
+}
+
+.about-history__hidden-container {
+    overflow: hidden;
+
+    transition: all 0.2s linear 0s;
+}
+
+.about-history__first-p,
+.about-history__second-p {
+    color: #1E1E1E;
+    text-align: center;
+    font-family: $regular;
+    @include adaptiv-font(22, 18);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+}
+
+.about-history__img-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+
+    width: 100%;
+
+    @include adaptivMargin(70, 0, 0, 0, 30, 0, 0, 0);
+
+    img {
+        max-width: 705px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.is-open-card {
+    transition: all 0.2s linear 0s;
+
+    max-height: 0 !important;
+}
+
+
+.about-history__btn-toggel_wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%
+}
+
+.about-history__btn-toggel {
+    @include adaptivMargin(35, 0, 30, 0, 17, 0, 20, 0);
+
+    color: #000;
+    text-align: center;
+    font-family: $regular;
+    @include adaptiv-font(22, 12);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+
+
+
+    border-bottom: 1px solid #000;
+
+    cursor: pointer;
+}
+
+.about__map-title {
+    @include adaptivMargin(85, 0, 120, 0, 50, 0, 70, 0);
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(30, 18);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+
+.about__map-mob {
+    display: none;
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.about__map-mob-title {
+    @include adaptivMargin(85, 0, 120, 0, 50, 0, 70, 0);
+    padding: 0 20px;
+
+    color: #1E1E1E;
+    font-family: $medium;
+    @include adaptiv-font(30, 18);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+@media (max-width: 1510px) {
+
+    .about__container,
+    .about-history__container,
+    .about__map {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .about-discription__wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 50px;
+    }
+
+    .about-discription__second-container {
+        row-gap: 50px;
+    }
+}
+
+@media (max-width:762px) {
+    .about-discription__second-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-discription__container_btn-open {
+        display: flex;
+    }
+
+    .about-history__img-container {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 30px;
+    }
+
+    .about__map-mob {
+        display: block;
+    }
+
+    .about__map {
+        display: none;
+    }
+}
